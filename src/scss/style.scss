@@ -1,0 +1,96 @@
+* {
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+}
+
+ul, ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.main {
+    padding: 62px 77px;
+    background-color: #c4c4c4;
+    width: 661px;
+    margin: 0 auto;
+
+    &__block {
+        margin-bottom: 45px;
+    }
+}
+
+.search {
+
+    &__input {
+        min-height: 60px;
+        width: 100%;
+        font-size: 48px;
+    }
+
+    &__autocomplete {
+    }
+
+    &__item {
+        cursor: pointer;
+        background: #E3E3E3;
+        border: 2px solid #000000;
+        padding: 0 13px;
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 35px;
+        color: #000000;
+
+        &:hover {
+            background: #65CDF9;
+        }
+    }
+}
+
+.repositories {
+
+    .repositories__item {
+        position: relative;
+
+        height: 101px;
+        background: #E27BEB;
+        border: 1px solid #000000;
+        padding: 8px 16px;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 28px;
+        color: #000000;
+
+        p {
+            margin: 0;
+        }
+    }
+
+    .repositories__btn-close-item {
+        position: absolute;
+        right: 34px;
+        top: 31px;
+        width: 42px;
+        height: 38.5px;
+        cursor: pointer;
+
+        &::after, &::before {
+            content: '';
+            position: absolute;
+            height: 4px;
+            width: 38px;
+            top: calc(50% - 2px);
+            left: 0;
+            transform-origin: center;
+            background-color: #ff0000;
+        }
+
+        &::after {
+            transform: rotate(-45deg);
+        }
+
+        &::before {
+            transform: rotate(45deg);
+        }
+    }
+}
