@@ -6,7 +6,6 @@ export class Search {
         this._input = this.createElement('input', 'search__input');
         this._input.type = 'text';
         this._input.addEventListener('input', () => this.update());
-        console.log(this._input);
 
         this._autoCompleteList = this.createElement('ul', 'search__autocomplete');
 
@@ -24,9 +23,9 @@ export class Search {
         try {
             if (this._input.value == '')
                 return;
+
             await this.sendRequest(this._input.value);
-            console.log('END');
-            console.log(this._response);
+
             this.showFound();
         }
         catch(err) {
@@ -35,7 +34,6 @@ export class Search {
     }
 
     async sendRequest(target) {
-        console.log("START SEND");
         if (!this._url)
             return null;
 
@@ -44,7 +42,6 @@ export class Search {
         let response = await fetch(this._url);
 
         if (response.ok) {
-            console.log('RETURN');
             this._response = await response.json();
             return;
         }
@@ -76,7 +73,7 @@ export class Search {
             
             this.clear();
             this._input.value = '';
-            console.log("CALLBACK");
+            
             cb(this._response.items[target.dataset.index]);
         }
         

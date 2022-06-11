@@ -140,7 +140,6 @@ var Search = /*#__PURE__*/function () {
       return _this.update();
     });
 
-    console.log(this._input);
     this._autoCompleteList = this.createElement('ul', 'search__autocomplete');
 
     this._app.append(this._input);
@@ -177,23 +176,21 @@ var Search = /*#__PURE__*/function () {
                 return this.sendRequest(this._input.value);
 
               case 5:
-                console.log('END');
-                console.log(this._response);
                 this.showFound();
-                _context.next = 13;
+                _context.next = 11;
                 break;
 
-              case 10:
-                _context.prev = 10;
+              case 8:
+                _context.prev = 8;
                 _context.t0 = _context["catch"](0);
                 console.log(_context.t0);
 
-              case 13:
+              case 11:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, this, [[0, 10]]);
+        }, _callee, this, [[0, 8]]);
       }));
 
       function _update() {
@@ -211,41 +208,38 @@ var Search = /*#__PURE__*/function () {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                console.log("START SEND");
-
                 if (this._url) {
-                  _context2.next = 3;
+                  _context2.next = 2;
                   break;
                 }
 
                 return _context2.abrupt("return", null);
 
-              case 3:
+              case 2:
                 this._url.searchParams.set('q', target);
 
-                _context2.next = 6;
+                _context2.next = 5;
                 return fetch(this._url);
 
-              case 6:
+              case 5:
                 response = _context2.sent;
 
                 if (!response.ok) {
-                  _context2.next = 13;
+                  _context2.next = 11;
                   break;
                 }
 
-                console.log('RETURN');
-                _context2.next = 11;
+                _context2.next = 9;
                 return response.json();
 
-              case 11:
+              case 9:
                 this._response = _context2.sent;
                 return _context2.abrupt("return");
 
-              case 13:
+              case 11:
                 throw new Error("Ошибка HTTP: " + response.status);
 
-              case 14:
+              case 12:
               case "end":
                 return _context2.stop();
             }
@@ -283,7 +277,6 @@ var Search = /*#__PURE__*/function () {
         if (!target.classList.contains('search__item')) return;
         this.clear();
         this._input.value = '';
-        console.log("CALLBACK");
         cb(this._response.items[target.dataset.index]);
       }
 

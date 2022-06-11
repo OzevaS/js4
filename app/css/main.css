@@ -388,40 +388,6 @@ ul, ol {
   .search__item:hover {
     background: #65CDF9; }
 
-.repositories .repositories__item {
-  position: relative;
-  height: 101px;
-  background: #E27BEB;
-  border: 1px solid #000000;
-  padding: 8px 16px;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 28px;
-  color: #000000; }
-  .repositories .repositories__item p {
-    margin: 0; }
-
-.repositories .repositories__btn-close-item {
-  position: absolute;
-  right: 34px;
-  top: 31px;
-  width: 42px;
-  height: 38.5px;
-  cursor: pointer; }
-  .repositories .repositories__btn-close-item::after, .repositories .repositories__btn-close-item::before {
-    content: '';
-    position: absolute;
-    height: 4px;
-    width: 38px;
-    top: calc(50% - 2px);
-    left: 0;
-    transform-origin: center;
-    background-color: #ff0000; }
-  .repositories .repositories__btn-close-item::after {
-    transform: rotate(-45deg); }
-  .repositories .repositories__btn-close-item::before {
-    transform: rotate(45deg); }
-
 .gitview__list-reps {
   margin-top: 40px; }
 

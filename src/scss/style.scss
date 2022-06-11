@@ -28,9 +28,6 @@ ul, ol {
         font-size: 48px;
     }
 
-    &__autocomplete {
-    }
-
     &__item {
         cursor: pointer;
         background: #E3E3E3;
@@ -43,54 +40,6 @@ ul, ol {
 
         &:hover {
             background: #65CDF9;
-        }
-    }
-}
-
-.repositories {
-
-    .repositories__item {
-        position: relative;
-
-        height: 101px;
-        background: #E27BEB;
-        border: 1px solid #000000;
-        padding: 8px 16px;
-        font-weight: 400;
-        font-size: 24px;
-        line-height: 28px;
-        color: #000000;
-
-        p {
-            margin: 0;
-        }
-    }
-
-    .repositories__btn-close-item {
-        position: absolute;
-        right: 34px;
-        top: 31px;
-        width: 42px;
-        height: 38.5px;
-        cursor: pointer;
-
-        &::after, &::before {
-            content: '';
-            position: absolute;
-            height: 4px;
-            width: 38px;
-            top: calc(50% - 2px);
-            left: 0;
-            transform-origin: center;
-            background-color: #ff0000;
-        }
-
-        &::after {
-            transform: rotate(-45deg);
-        }
-
-        &::before {
-            transform: rotate(45deg);
         }
     }
 }
